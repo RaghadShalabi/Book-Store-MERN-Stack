@@ -55,14 +55,6 @@ export default function ShowBook() {
             <span className='text-xl mr-4 text-gray-600'>Publish Year</span>
             <span>{book.publishYear}</span>
           </div>
-          <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-600'>Create Time</span>
-            <span>{new Date(book.createdAt).toString()}</span>
-          </div>
-          <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-600'>Last Update Time</span>
-            <span>{new Date(book.updatedAt).toString()}</span>
-          </div>
         </div>
       )}
     </div>
