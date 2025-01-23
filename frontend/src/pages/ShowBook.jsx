@@ -13,7 +13,7 @@ export default function ShowBook() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:3000/books/${id}`)
+      .get(`${import.meta.env.VITE_BASE_URL}/books/${id}`)
       .then((response) => {
         console.log(response.data);
         setBook(response.data);

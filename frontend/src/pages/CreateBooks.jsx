@@ -34,7 +34,7 @@ export default function CreateBooks() {
     }
 
     axios
-      .post('http://localhost:3000/books', data, {
+      .post(`${import.meta.env.VITE_BASE_URL}/books`, data, {
         headers: {
           Authorization: `BEARER__${token}`,
         },

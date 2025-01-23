@@ -34,7 +34,7 @@ export default function UserBooks() {
 
         // Fetch user books from the API
         axios
-            .get('http://localhost:3000/user/user-books', {
+            .get(`${import.meta.env.VITE_BASE_URL}/user/user-books`, {
                 headers: {
                     Authorization: `BEARER__${token}`,
                 },

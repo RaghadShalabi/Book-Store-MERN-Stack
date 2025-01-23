@@ -14,7 +14,7 @@ const SignUp = () => {
     const signUpUser = async (value) => {
         setIsLoading(true);
         try {
-            const response = await axios.post(`http://localhost:3000/auth/signUp`, value);
+            const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/signUp`, value);
             console.log(response);
             if (response.status == 201) {
                 toast.info('Please check your email', {

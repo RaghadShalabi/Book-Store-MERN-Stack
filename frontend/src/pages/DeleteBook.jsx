@@ -32,7 +32,7 @@ export default function DeleteBook() {
         }
     
     axios
-      .delete(`http://localhost:3000/books/${id}`,{
+      .delete(`${import.meta.env.VITE_BASE_URL}/books/${id}`,{
         headers: {
           Authorization: `BEARER__${token}`,
         },

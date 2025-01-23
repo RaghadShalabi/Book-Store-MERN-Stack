@@ -13,7 +13,7 @@ const SignIn = ({ login }) => {
   const signInUser = async (value) => {
     setIsLoading(true);
     try {
-      const response = await axios.post(`http://localhost:3000/auth/signIn`, value);
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/signIn`, value);
       if (response.status === 200) {
         toast.success('Login successful!', {
           position: "top-right",

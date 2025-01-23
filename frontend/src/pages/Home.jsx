@@ -12,7 +12,7 @@ export default function Home() {
 
   const getBooks = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/books');
+      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/books`);
       console.log(response.data.data);
       setBooks(response.data.data);
       setLoading(false);

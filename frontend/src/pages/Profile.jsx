@@ -34,7 +34,7 @@ export default function UserProfile() {
 
         // Fetch user profile from the API
         axios
-            .get('http://localhost:3000/user/profile', {
+            .get(`${import.meta.env.VITE_BASE_URL}/user/profile`, {
                 headers: {
                     Authorization: `BEARER__${token}`,
                 },

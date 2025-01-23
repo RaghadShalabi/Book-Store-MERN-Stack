@@ -35,7 +35,7 @@ export default function EditBook() {
       return;
     }
     axios
-      .get(`http://localhost:3000/books/${id}`, {
+      .get(`${import.meta.env.VITE_BASE_URL}/books/${id}`, {
         headers: {
           Authorization: `BEARER__${token}`,
         },
@@ -87,7 +87,7 @@ export default function EditBook() {
     }
 
     axios
-      .put(`http://localhost:3000/books/${id}`, data, {
+      .put(`${import.meta.env.VITE_BASE_URL}/books/${id}`, data, {
         headers: {
           Authorization: `BEARER__${token}`,
         },
