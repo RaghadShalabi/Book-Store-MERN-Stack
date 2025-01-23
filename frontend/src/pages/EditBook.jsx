@@ -21,7 +21,7 @@ export default function EditBook() {
 
     if (!token) {
       setLoading(false);
-      toast.error('Please login again.', {
+      toast.error('Please Sign In again.', {
         position: "top-right",
         autoClose: true,
         hideProgressBar: false,
@@ -72,7 +72,7 @@ export default function EditBook() {
     const token = user?.token;  // Get the token
     if (!token) {
       setLoading(false);
-      toast.error('Please login again.', {
+      toast.error('Please Sign In again.', {
         position: "top-right",
         autoClose: true,
         hideProgressBar: false,

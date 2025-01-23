@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Slide, toast } from 'react-toastify';
+import { BsArrowLeft } from 'react-icons/bs';
 
 export default function UserProfile() {
     const [user, setUser] = useState(null);
@@ -17,7 +18,7 @@ export default function UserProfile() {
 
 
         if (!token) {
-            toast.error('Please login again.', {
+            toast.error('Please Sign In again.', {
                 position: "top-right",
                 autoClose: true,
                 hideProgressBar: false,
@@ -28,8 +29,8 @@ export default function UserProfile() {
                 theme: "dark",
                 transition: Slide,
             });
-            //   navigate('/login');  // Redirect to login if no token
-            //   return;
+              navigate('/signIn');  // Redirect to Sign In if no token
+              return;
         }
 
         // Fetch user profile from the API
@@ -64,12 +65,19 @@ export default function UserProfile() {
 
     return (
         <div className="p-4">
+            <div className="flex">
+                <Link
+                    to={`/`}
+                    className="bg-pink-800 text-white px-4 py-1 rounded-lg w-fit"
+                >
+                    <BsArrowLeft className="text-2xl" />
+                </Link>
+            </div>
             <h1 className="text-3xl my-8 font-bold">User Profile</h1>
             <div className="border-2 border-sky-400 rounded-xl p-8 mx-auto w-[600px]">
                 <h2 className="text-2xl">Name: {user?.userName }</h2>
                 <p className="text-xl">Email: {user?.email }</p>
                 <p className="text-xl">Joined: {new Date(user?.createdAt).toLocaleDateString()}</p>
-                {/* Add more fields if needed */}
             </div>
         </div>
     );

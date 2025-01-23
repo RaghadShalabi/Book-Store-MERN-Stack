@@ -28,7 +28,7 @@ const SignUp = () => {
                     theme: "dark",
                     transition: Slide,
                 });
-                // navigate(`/signIn`);
+                navigate(`/signIn`);
             } else {
                 alert('Failed to register user');
             }

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { BsPerson, BsBox } from "react-icons/bs";
 
-const Navbar = ({ user, logout }) => {
+const Navbar = ({ user, signout }) => {
 
     return (
         <nav className="bg-gray-800 text-white p-4">
@@ -20,10 +20,10 @@ const Navbar = ({ user, logout }) => {
                                 <BsBox className="inline-block mr-1" /> My Books
                             </Link>
                             <button
-                                onClick={logout}
+                                onClick={signout}
                                 className="hover:bg-gray-700 px-3 py-2 rounded-md"
                             >
-                                Log Out
+                                Sign Out
                             </button>
                         </>
                     ) : (

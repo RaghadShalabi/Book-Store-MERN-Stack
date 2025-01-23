@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { Slide, toast } from "react-toastify";
 
-const SignIn = ({ login }) => {
+const SignIn = ({ signin }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const SignIn = ({ login }) => {
     try {
       const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/signIn`, value);
       if (response.status === 200) {
-        toast.success('Login successful!', {
+        toast.success('Sign In successfully!', {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -27,9 +27,8 @@ const SignIn = ({ login }) => {
           transition: Slide,
         });
         // Save token or user data here
-        // استخدام دالة login لتحديث حالة المستخدم
-        login(response.data);  // افترض أن الرد يحتوي على بيانات المستخدم أو الرمز المميز
-        navigate(`/`); // Redirect to dashboard or another page
+        signin(response.data);
+        navigate(`/`); // Redirect to dashboard
       } else {
         setServerError('Invalid email or password');
       }

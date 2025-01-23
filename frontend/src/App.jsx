@@ -23,12 +23,12 @@ export default function App() {
     }
   }, []);
 
-  const login = (userData) => {
+  const signin = (userData) => {
     localStorage.setItem("user", JSON.stringify(userData));
     setUser(userData); // تحديث حالة المستخدم
   };
 
-  const logout = () => {
+  const signout = () => {
     localStorage.removeItem("user");
     navigate('/signIn')
     setUser(null); // تحديث حالة المستخدم عند تسجيل الخروج
@@ -36,11 +36,11 @@ export default function App() {
 
   return (
     <>
-      <Navbar user={user} logout={logout} />
+      <Navbar user={user} signout={signout} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path="/signUp" element={<SignUp />} />
-        <Route path="/signIn" element={<SingIn login={login}/>} />
+        <Route path="/signIn" element={<SingIn signin={signin}/>} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/my-books" element={<MyBooks/>}/>
 

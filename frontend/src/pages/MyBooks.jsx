@@ -17,7 +17,7 @@ export default function UserBooks() {
         const token = user?.token;  // Get the token
 
         if (!token) {
-            toast.error('Please login again.', {
+            toast.error('Please Sign In again.', {
                 position: "top-right",
                 autoClose: true,
                 hideProgressBar: false,
@@ -28,7 +28,7 @@ export default function UserBooks() {
                 theme: "dark",
                 transition: Slide,
             });
-            navigate('/signIn');  // Redirect to login if no token
+            navigate('/signIn');  // Redirect to Sign In if no token
             return;
         }
 
