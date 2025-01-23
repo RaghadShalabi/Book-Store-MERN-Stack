@@ -1,4 +1,4 @@
-import {UserModel} from "../../../DB/models/User.model.js";
+import { UserModel } from "../../../DB/models/User.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { sendEmail } from "../../srvices/email.js";
@@ -81,5 +81,5 @@ export const confirmEmail = async (req, res, next) => {
       })
     );
   }
-  return res.redirect('http://localhost:5173/signIn');
+  return res.redirect('https://book-store-mern-stack-1-5n7y.onrender.com/signIn');
 };
