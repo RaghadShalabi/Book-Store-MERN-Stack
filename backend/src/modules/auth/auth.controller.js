@@ -27,7 +27,7 @@ export const signUp = async (req, res, next) => {
       </div>`;
 
   await sendEmail(email, "confirm email", html);
-  const user = await userModel.create({
+  const user = await UserModel.create({
     userName,
     email,
     password: hashPassword,
